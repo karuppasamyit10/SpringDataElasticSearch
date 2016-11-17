@@ -8,9 +8,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.elasticsearch.dao.EmployeeDao;
-import com.elasticsearch.entity.Employee;
-import com.elasticsearch.repository.EmployeeRepository;
+import com.elasticsearch.dao.EmployeeElasticDao;
+import com.elasticsearch.elastic.entity.Employee;
+import com.elasticsearch.elastic.repository.EmployeeElasticRepository;
 
 
 /**
@@ -19,10 +19,10 @@ import com.elasticsearch.repository.EmployeeRepository;
  * SpringDataElastic
  */
 @Service
-public class EmployeeDaoImpl implements EmployeeDao{
+public class EmployeeElasticDaoImpl implements EmployeeElasticDao{
 
 	@Autowired
-	EmployeeRepository employeeRepository;
+	EmployeeElasticRepository employeeRepository;
 	
 	@Override
 	public Employee addEmployee(Employee employee) throws Exception {

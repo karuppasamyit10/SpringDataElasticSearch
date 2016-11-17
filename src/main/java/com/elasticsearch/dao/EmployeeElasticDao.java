@@ -5,14 +5,14 @@ package com.elasticsearch.dao;
 
 import java.util.List;
 
-import com.elasticsearch.entity.Employee;
+import com.elasticsearch.elastic.entity.Employee;
 
 /**
  * @author Karuppu
  * @created on Nov 17, 2016
  * SpringDataElastic
  */
-public interface EmployeeDao {
+public interface EmployeeElasticDao {
 
 	public Employee addEmployee(Employee employee) throws Exception;
 	

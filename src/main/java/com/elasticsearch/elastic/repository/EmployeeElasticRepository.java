@@ -1,14 +1,14 @@
 /**
  * 
  */
-package com.elasticsearch.repository;
+package com.elasticsearch.elastic.repository;
 
 import java.util.List;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
-import com.elasticsearch.entity.Employee;
+import com.elasticsearch.elastic.entity.Employee;
 
 /**
  * @author Karuppu
@@ -16,7 +16,7 @@ import com.elasticsearch.entity.Employee;
  * SpringDataElastic
  */
 @Repository
-public interface EmployeeRepository extends ElasticsearchRepository<Employee, Integer> {
+public interface EmployeeElasticRepository extends ElasticsearchRepository<Employee, Integer> {
 
 	/**
 	 * @param search

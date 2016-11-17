@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.elasticsearch.entity;
+package com.elasticsearch.elastic.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;

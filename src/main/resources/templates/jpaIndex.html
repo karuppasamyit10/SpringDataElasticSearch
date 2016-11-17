@@ -14,6 +14,7 @@ th, td {
 }
 </style>
 </head>
+<h2>Jpa - Employee Information</h2>
 <body>
 	<table>
 		<thead>
@@ -34,15 +35,15 @@ th, td {
 				<td th:text="${employee.lastName}"></td>
 				<td th:text="${employee.language}"></td>
 				<td th:text="${employee.department}"></td>
-				<td><a th:href="@{/api/employee/edit(employeeId=${employee.employeeId})}">Edit</a></td>
-				<td><a th:href="@{/api/employee/delete(employeeId=${employee.employeeId})}">Delete</a></td>
+				<td><a th:href="@{/api/jpa/employee/edit(employeeId=${employee.employeeId})}">Edit</a></td>
+				<td><a th:href="@{/api/jpa/employee/delete(employeeId=${employee.employeeId})}">Delete</a></td>
 			</tr>
 		</tbody>
 	</table>
 	<br />
 	<div  th:if="${employee != null}">
-         <h2>Edit Employee Information</h2> <a th:href="@{/index}">Create New Employee</a>
-		 <form action="#" th:action="@{/api/employee/add}" method="POST" th:object="${employee}">
+         <h2>Edit Employee Information</h2> <a th:href="@{/jpaIndex}">Create New Employee</a>
+		 <form action="#" th:action="@{/api/jpa/employee/add}" method="POST" th:object="${employee}">
 			EmployeeId <input type="text" id="employeeId" name="employeeId" th:value="${employee.employeeId}" readonly="readonly" /><br />
 			FirstName <input type="text" id="firstName" name="firstName" th:value="${employee.firstName}"/><br />
 			LastName <input type="text" id="lastName" name="lastName" th:value="${employee.lastName}"/><br />
@@ -53,8 +54,8 @@ th, td {
 	</div>
 	<div th:if="${employee == null}">
 	   <h2>Create New Employee</h2>
-	   <form action="#" th:action="@{/api/employee/add}" method="POST" th:object="${employee}">
-			EmployeeId <input type="text" id="employeeId" name="employeeId" /><br />
+	   <form action="#" th:action="@{/api/jpa/employee/add}" method="POST" th:object="${employee}">
+<!-- 			EmployeeId <input type="text" id="employeeId" name="employeeId" /><br /> -->
 			FirstName <input type="text" id="firstName" name="firstName" /><br />
 			LastName <input type="text" id="lastName" name="lastName" /><br />
 			Language <input type="text" id="language" name="language" /><br />
@@ -63,10 +64,11 @@ th, td {
 		</form>
 	</div>
 	<h2>Search for Employees</h2>
-	<form action="#" th:action="@{/api/employee/search}" th:object="${employeeSearch}"
+	<form action="#" th:action="@{/api/jpa/employee/search}" th:object="${employeeSearch}"
 		method="POST">
 		<input type="text" name="search" id="search"
 			th:value="${employeeSearch}" /> <input type="submit" value="Search" />
 	</form>
+	<a th:href="@{/elasticIndex}">Go to Elastic Employee Information</a>
 </body>
 </html>
